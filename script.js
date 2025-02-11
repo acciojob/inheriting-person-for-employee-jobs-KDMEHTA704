@@ -1,8 +1,29 @@
-// complete this js code
-function Person(name, age) {}
+// Person class
+class Person {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
 
-function Employee(name, age, jobTitle) {}
+    // Greet method for Person
+    greet() {
+        console.log(`Hello, my name is ${this.name}, I am ${this.age} years old.`);
+    }
+}
 
-// Do not change code below this line
+// Employee class inheriting from Person
+class Employee extends Person {
+    constructor(name, age, jobTitle) {
+        super(name, age);
+        this.jobTitle = jobTitle;
+    }
+
+    // Job-specific greeting method
+    jobGreet() {
+        console.log(`Hello, my name is ${this.name}, I am ${this.age} years old, and my job title is ${this.jobTitle}.`);
+    }
+}
+
+// Attach classes to window for Cypress testing
 window.Person = Person;
 window.Employee = Employee;
